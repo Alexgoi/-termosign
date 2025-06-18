@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Termo de Acordo</title>
+    <style>
+        /* Define o tamanho da folha e remove margens da impressora */
+        @page {
+            size: A4;
+            margin: 0;
+        }
+
+        /* Estilos aplicados ao corpo do documento */
+        body {
+            margin: 0;
+            /* ESTA É A PARTE MAIS IMPORTANTE PARA AJUSTAR */
+            /* Crie um espaço no topo e na base para o papel timbrado. */
+            /* Ajuste estes valores para serem um pouco MAIORES que a altura das suas imagens. */
+            padding-top: 4cm;
+            padding-bottom: 3.5cm;
+            padding-left: 2cm;
+            padding-right: 2cm;
+
+            /* Estilos de texto padrão */
+            font-family: 'Helvetica', 'Arial', sans-serif;
+            font-size: 11pt;
+            line-height: 1.5;
+            color: #333;
+        }
+
+        /* --- LÓGICA DO PAPEL TIMBRADO --- */
+        #cabecalho,
+        #rodape {
+            position: fixed;
+            left: 0;
+            right: 0;
+            width: 100%;
+        }
+
+        #cabecalho {
+            top: 0;
+        }
+
+        #rodape {
+            bottom: 0;
+        }
+
+        #cabecalho img,
+        #rodape img {
+            width: 100%;
+            display: block;
+        }
+
+        /* --- ESTILIZAÇÃO DO CONTEÚDO (TEXTO) --- */
+        main {
+            /* O conteúdo principal não precisa de padding, pois o body já cuida disso */
+        }
+
+        h1 {
+            font-size: 13pt;
+            text-align: center;
+            font-weight: bold;
+            margin-top: 0;
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            font-size: 11pt;
+            font-weight: bold;
+            margin-top: 25px;
+            margin-bottom: 10px;
+            break-after: avoid; /* Tenta não quebrar a página logo depois de um título */
+        }
+
+        p {
+            text-align: justify;
+            margin-top: 0;
+            margin-bottom: 1em;
+        }
+        
+        strong {
+            font-weight: bold;
+        }
+
+        .assinatura-bloco {
+            margin-top: 40px;
+            break-inside: avoid; /* Tenta não quebrar o bloco de assinatura entre páginas */
+            page-break-inside: avoid; /* Dupla garantia para renderizadores diferentes */
+        }
+
+        .linha-assinatura {
+            margin-bottom: 0;
+        }
+
+        ol {
+            padding-left: 20px;
+        }
+
+        ol li {
+            padding-left: 5px;
+            margin-bottom: 0.5em;
+        }
+
+        .imagem-corpo {
+             max-width: 100%;
+             height: auto;
+             display: block;
+             margin: 20px auto;
+             border: 1px solid #ddd;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div id="cabecalho">
+        <img src="{{IMAGEM_CABECALHO}}" alt="Cabeçalho" />
+    </div>
+    <div id="rodape">
+        <img src="{{IMAGEM_RODAPE}}" alt="Rodapé" />
+    </div>
+
+    <main>
+        <h1>TERMO DE ACORDO (EXTRA)JUDICIAL – CONFISSÃO DE DÍVIDA</h1>
+        <p>
+            <strong>CREDOR:</strong> {{condominio}}, inscrito no CNPJ sob nº{{cnpj_condominio}}, sito na {{endereco_cond}}, Bairro {{bairro_cond}}, Cidade {{cidade_cond}}, representado pelo síndico eleito em assembleia geral ordinária Sr. {{sindico}}.
+        </p>
+        <p>
+            <strong>DEVEDOR(A):</strong> {{devedor}}, brasileiro(a), portador(a) do CPF n° {{cpf}}, residente e domiciliado na {{endereco_devedor}}, possuidor dos telefones: {{telefone}} e email: {{email}} proprietário registral com alienação fiduciária à CEF do imóvel.
+        </p>
+        <p>
+            As partes têm entre si, justo e acordado, o presente termo de acordo para o reconhecimento de dívida e previsão de pagamento, que se regerá pelas seguintes cláusulas:
+        </p>
+
+        <h2>CLÁUSULA PRIMEIRA - DO OBJETO</h2>
+        <p>
+            O CREDOR é o titular do crédito no valor total de, sendo que o(a) devedora(a) o reconhece e confessa. O montante é oriundo das cotas relativas aos meses:
+        </p>
+        
+        <img src="{{IMAGEM_COTAS}}" alt="Detalhamento das Cotas" class="imagem-corpo">
+
+        <p>
+            Os valores estão acrescidos de juros 1%, multa de 2%, correção monetária (IGPM) e honorários extrajudiciais no percentual de 10% sobre o valor do débito, conforme deliberação assemblear. Tais honorários duplicam em caso de descumprimento conforme cláusula 4ª e de pleno conhecimento do condômino, sendo aplicável sobre os 10% já inclusos no presente parcelamento.
+        </p>
+        <p>
+            O(a) DEVEDOR(a) reconhece e confessa a dívida e ajusta no presente termo de acordo a forma de pagamento.
+        </p>
+
+        <h2>CLÁUSULA SEGUNDA - FORMA DE PAGAMENTO</h2>
+        <p>
+            O pagamento da referida dívida ora reconhecida e confessada no montante de, será feito da seguinte forma:
+        </p>
+        <ol>
+            <li>{{forma_pagamento}}</li>
+            <li>As parcelas ora ajustadas serão pagas por meio de boleto bancário expedido pela administradora do CREDOR, e o vencimento das parcelas será dia de cada mês:</li>
+            <li>O boleto estará à disposição no site/aplicativo da ADMINISTRADORA DO CONDOMÍNIO e o acesso se dá com os dados do proprietário.
+                <p style="padding-left:20px; text-align: left;">3.1 em caso de não recebimento do boleto em até 05 dias antes do vencimento, o devedor tem a responsabilidade de buscá-lo Junto à administradora do condomínio, para quitação;</p>
+            </li>
+            <li>O DEVEDOR tem conhecimento que o recebimento e pagamento do boleto até a data aprazada são de sua inteira responsabilidade.</li>
+        </ol>
+        
+        <img src="{{IMAGEM_CALCULO}}" alt="Cálculo Completo" class="imagem-corpo">
+        
+        <p>
+            <strong>Parágrafo segundo:</strong> O não recebimento do documento até a data do vencimento não isenta do pagamento do valor integral acrescido dos encargos provenientes, devendo o condômino atentar-se às datas e pagamentos, eis que dívida portável. Deve atentar-se aos artigos 389, 395 e 404 do Código Civil pois incidem multas e demais cominações legais.
+        </p>
+
+        <h2>CLÁUSULA TERCEIRA – COMPROMISSO</h2>
+        <p>
+            O(A) DEVEDORA(A) se compromete junto ao credor em manter as cotas condominiais em dia, sob pena de execução do presente feito com as medidas expropriatórias típicas e coercitivas atípicas (Art. 319, inc IV), nos termos do Código de Processo Civil.
+        </p>
+        <p>
+            <strong>Parágrafo único:</strong> A manutenção da cota condominial do DEVEDOR adimplida é parte integrante do presente acordo, sendo que o inadimplemento da cota condominial mensal gera juros de 1% ao mês e multa de 2% nos termos legais, bem como incide a cláusula de vencimento antecipado (cláusula quarta) do presente contrato.
+        </p>
+
+        <h2>CLÁUSULA QUARTA - DO DESCUMPRIMENTO</h2>
+        <p>
+            O não pagamento de qualquer parcela do acordou e/ou da cota condominial mensal na data aprazada importará no vencimento integral e antecipado do débito, sujeitando-se o(a) DEVEDOR(A), além da execução do presente instrumento, ao pagamento do valor integral do débito, sobre o qual incidirá a aplicação de multa de 10%, juros de mora de 1% ao mês e correção monetária pelo índice IGPM-FGV e mais custas processuais e honorários advocatícios na base de 20% sobre o valor total do débito.
+        </p>
+        <p>
+            <strong>Parágrafo único:</strong> O(a) devedor(a) fica ciente de que o não pagamento da parcela do acordo e/ou da cota condominial mensal determinará o vencimento antecipado nos termos dessa cláusula e ensejará o ajuizamento de ação da ação de execução do presente título executivo extrajudicial e/ou prosseguimento de feito já judicializado e homologado, sendo o imóvel o bem a ser indicado à penhora, uma vez que se trata de dívida propter rem.
+        </p>
+
+        <h2>CLÁUSULA QUINTA – DISPOSIÇÕES GERAIS</h2>
+        <p><strong>Parágrafo primeiro:</strong> O presente acordo vincula o(a) devedor(a) e seus sucessores a qualquer título.</p>
+        <p><strong>Parágrafo segundo:</strong> A eventual tolerância à infringência de qualquer das cláusulas deste instrumento ou o não exercício de qualquer direito nele previsto constituirá mera liberalidade do CREDOR, não implicando em novação ou transação de qualquer espécie.</p>
+        <p><strong>Parágrafo terceiro:</strong> O(a) devedor(a), declara que a matrícula da unidade está em seu nome e em caso de consolidação desse pela Caixa Econômica Federal, o presente acordo não terá efeitos e os valores pagos serão abatidos do saldo das cotas vencidas mais antigas.</p>
+        <p><strong>Parágrafo quarto:</strong> As partes estão de acordo que o presente termo será firmado por sistema de assinatura digital D4SIGN pelos e-mails enviados pelo(s) devedor(es)() e pelo credor declarando nesse ato serem titulares e dando plena validade das assinaturas.</p>
+        <p><strong>Parágrafo quinto:</strong> O Devedor dá, nesse ato, ciência e consente com o uso dos dados contidos e solicitados para dar segurança jurídica ao presente contrato (documentos e imagens) para a finalidade específica de geração de boletos pela auxiliar de administração do condomínio e execução extrajudicial (protesto) e judicial do presente termo de acordo de cotas condominiais em caso de inadimplemento;</p>
+        <p><strong>Parágrafo sexto:</strong> A presente composição não importa em novação de dívida, nos termos do artigo 361 do Código Civil, sendo mantido o débito das cotas condominiais;</p>
+        
+        <p>As partes elegem o foro da comarca de {{CIDADE}}/RS para dirimir quaisquer dúvidas oriundas do presente instrumento.</p>
+        <p>As partes acordam que este Contrato é celebrado nos termos dos artigos 104 e 107 do Código Civil, podendo ser assinado pelas Partes em formato eletrônico/digital, ainda que utilizando certificados não emitidos pela ICP-Brasil, nos termos do art. 10, § 2º, da Medida Provisória nº 2.200-2, de 24 de agosto de 2001. Para este fim, serão utilizados serviços disponíveis no mercado e amplamente utilizados, que possibilitam a segurança da assinatura digital por meio da sistemas de certificação capazes de validar a autoria da assinatura eletrônica, bem como de traçar a “trilha de auditoria digital” (cadeia de custódia) do Contrato, a fim de verificar sua integridade. Caso a assinatura da presente promessa pelas partes ocorra de forma física, será firmado em três vias, de um só teor, junto com duas testemunhas.</p>
+
+        <p style="text-align: right; margin-top: 30px;">{{CIDADE}}, {{DATA_DIA}}</p>
+        
+        <div class="assinatura-bloco">
+            <p class="linha-assinatura">_______________________________________</p>
+            <p>CREDOR: {{condominio}}</p>
+            <p>Síndico – {{sindico}}</p>
+        </div>
+        
+        <div class="assinatura-bloco">
+            <p class="linha-assinatura">__________________________________________________</p>
+            <p>DEVEDORES: {{devedor}}</p>
+        </div>
+        
+        <div class="assinatura-bloco">
+            <p class="linha-assinatura">Testemunha 1: ______________________ CPF:</p>
+        </div>
+
+        <div class="assinatura-bloco">
+            <p class="linha-assinatura">Testemunha 2: ______________________ CPF:</p>
+        </div>
+    </main>
+
+</body>
+</html>
