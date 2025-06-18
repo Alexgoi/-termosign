@@ -4,111 +4,41 @@
     <meta charset="UTF-8">
     <title>Termo de Acordo</title>
     <style>
-        /* Define o tamanho da folha e remove margens da impressora */
-        @page {
-            size: A4;
-            margin: 0;
-        }
-
-        /* Estilos aplicados ao corpo do documento */
+        /* Estilos aplicados apenas ao conteúdo principal do termo */
         body {
-            margin: 0;
-            /* ESTA É A PARTE MAIS IMPORTANTE PARA AJUSTAR */
-            /* Crie um espaço no topo e na base para o papel timbrado. */
-            /* Ajuste estes valores para serem um pouco MAIORES que a altura das suas imagens. */
-            padding-top: 4cm;
-            padding-bottom: 3.5cm;
-            padding-left: 2cm;
-            padding-right: 2cm;
-
-            /* Estilos de texto padrão */
             font-family: 'Helvetica', 'Arial', sans-serif;
             font-size: 11pt;
             line-height: 1.5;
-            color: #333;
         }
-
-        /* --- LÓGICA DO PAPEL TIMBRADO --- */
-        #cabecalho,
-        #rodape {
-            position: fixed;
-            left: 0;
-            right: 0;
-            width: 100%;
-        }
-
-        #cabecalho {
-            top: 0;
-        }
-
-        #rodape {
-            bottom: 0;
-        }
-
-        #cabecalho img,
-        #rodape img {
-            width: 100%;
-            display: block;
-        }
-
-        /* --- ESTILIZAÇÃO DO CONTEÚDO (TEXTO) --- */
-        main {
-            /* O conteúdo principal não precisa de padding, pois o body já cuida disso */
-        }
-
         h1 {
             font-size: 13pt;
             text-align: center;
             font-weight: bold;
-            margin-top: 0;
             margin-bottom: 30px;
         }
-
         h2 {
             font-size: 11pt;
             font-weight: bold;
             margin-top: 25px;
             margin-bottom: 10px;
-            break-after: avoid; /* Tenta não quebrar a página logo depois de um título */
         }
-
         p {
             text-align: justify;
-            margin-top: 0;
             margin-bottom: 1em;
         }
-        
         strong {
             font-weight: bold;
         }
-
         .assinatura-bloco {
             margin-top: 40px;
-            break-inside: avoid; /* Tenta não quebrar o bloco de assinatura entre páginas */
-            page-break-inside: avoid; /* Dupla garantia para renderizadores diferentes */
+            break-inside: avoid;
         }
-
-        .linha-assinatura {
-            margin-bottom: 0;
-        }
-
-        ol {
-            padding-left: 20px;
-        }
-
-        ol li {
-            padding-left: 5px;
-            margin-bottom: 0.5em;
-        }
-
         .imagem-corpo {
              max-width: 100%;
              height: auto;
              display: block;
              margin: 20px auto;
-             border: 1px solid #ddd;
         }
-
     </style>
 </head>
 <body>
