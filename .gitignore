@@ -4,6 +4,9 @@ nome-do-arquivo-secreto.js
 # Arquivo de variáveis de ambiente
 .env
 
+# Ignora o arquivo .env dentro da pasta backend
+backend/.env
+
 # Dependências do Node.js
 /node_modules
 
