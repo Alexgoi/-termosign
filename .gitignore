@@ -1,0 +1,18 @@
+# Arquivo de configuração do Banco de Dados - SUBSTITUA PELO NOME REAL
+nome-do-arquivo-secreto.js
+
+# Arquivo de variáveis de ambiente
+.env
+
+# Dependências do Node.js
+/node_modules
+
+# Arquivos de Log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# Arquivos de sistema
+.DS_Store
+Thumbs.db
